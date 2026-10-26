@@ -223,6 +223,10 @@ Estas conclusiones están condicionadas por la referencia utilizada. Las métric
 
 Como continuación del análisis, se plantea comprobar si los patrones observados se mantienen al utilizar una referencia independiente, incorporar una segunda representación fundacional y aumentar la exigencia temporal y espacial de la evaluación. Para ello se propone utilizar una muestra propia de 2025, incorporar TESSERA en un año con cobertura completa, evaluar transferencia temporal entre 2021 y 2025 y volver a examinar la estabilidad espacial de la combinación entre variables espectrales y representaciones fundacionales.
 
+## Declaración de uso de inteligencia artificial
+
+Durante la elaboración de este informe se utilizó Claude (Anthropic) como apoyo para la escritura y la edición de estilo, la programación y depuración de los scripts, la revisión de consistencia entre el texto y los resultados tabulados y la verificación de las referencias. El diseño experimental, la ejecución de los análisis, la interpretación de los resultados y las conclusiones corresponden a la autora. El asistente no generó datos ni resultados: todas las cifras provienen de los scripts publicados en el repositorio, ejecutados por la autora sobre las fuentes descritas en la sección de datos.
+
 ## Disponibilidad de datos y código
 
 Los scripts del experimento, el motor de validación espacial, los resultados tabulados y las figuras del informe están disponibles en el repositorio público [cgsm-alphaearth-vs-espectral](https://github.com/linaq11/cgsm-alphaearth-vs-espectral), bajo licencia MIT. Los compuestos mensuales de Sentinel-2 proceden del cubo de datos desarrollado para la tesis; las representaciones de AlphaEarth se obtuvieron de la colección `GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL` de Google Earth Engine, y las etiquetas de referencia se derivaron de ESA WorldCover 2021, siguiendo los criterios de muestreo descritos en la sección de datos. Los archivos individuales por punto no se incluyen en el repositorio.
