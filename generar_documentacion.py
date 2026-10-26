@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Reúne en un solo Markdown todo lo redactado en los scripts: la cabecera (docstring) y los
-comentarios de cada uno, en el orden del flujo de trabajo del Informe 1. Escribe DOCUMENTACION_scripts.md.
+"""Reúne en un solo Markdown las cabeceras (docstring) y los comentarios de cada script, en el orden del
+flujo de trabajo del Informe 1, tal como están en el código. Escribe DOCUMENTACION_cabeceras.md; la
+documentación redactada por script está en DOCUMENTACION_scripts.md.
 
 USO: python generar_documentacion.py
 """
@@ -32,7 +33,7 @@ def cabecera_y_comentarios(ruta):
 
 
 def main():
-    out = ["# Documentación de los scripts\n", "Cabecera y comentarios de cada script, en el orden del flujo de trabajo. Generado por `generar_documentacion.py`.\n"]
+    out = ["# Cabeceras y comentarios de los scripts\n", "Texto tal como está en el código, en el orden del flujo de trabajo; conserva las notas de desarrollo. Generado por `generar_documentacion.py`. La documentación redactada está en `DOCUMENTACION_scripts.md`.\n"]
     for titulo, archivos in ORDEN:
         out.append("\n## %s\n" % titulo)
         for a in archivos:
@@ -41,7 +42,7 @@ def main():
             doc, com = cabecera_y_comentarios(ruta)
             out.append("\n### `%s`\n\n```\n%s\n```\n" % (a, doc))
             if com: out.append("\nComentarios en el código:\n\n" + "\n".join(com) + "\n")
-    open(os.path.join(AQUI, "DOCUMENTACION_scripts.md"), "w", encoding="utf-8").write("\n".join(out)); print("escrito DOCUMENTACION_scripts.md")
+    open(os.path.join(AQUI, "DOCUMENTACION_cabeceras.md"), "w", encoding="utf-8").write("\n".join(out)); print("escrito DOCUMENTACION_cabeceras.md")
 
 
 if __name__ == "__main__":

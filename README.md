@@ -17,7 +17,8 @@ El informe completo está en `informe/Informe1.md` y en PDF en la misma carpeta.
 | `resultados/` | Tablas CSV y JSON generadas por los scripts, por experimento: línea base espectral (`linea_base_2021/`), representaciones (`representaciones_2021/`), sensibilidad a las etiquetas (`sensibilidad_etiquetas/`), diez pliegues (`diez_pliegues/`), auditoría de etiquetas (`auditoria_etiquetas/`) y mapas (`mapa_clasificacion/`). Incluyen matrices de confusión por régimen, métricas por pliegue, pruebas pareadas, McNemar, permutación por bloques e importancias de variables. |
 | `figuras/` | Las cinco figuras del informe y los mapas clasificados en PNG. |
 | `informe/` | Informe en Markdown y PDF. |
-| `DOCUMENTACION_scripts.md` | Cabeceras y comentarios de todos los scripts, reunidos por `generar_documentacion.py`. |
+| `DOCUMENTACION_scripts.md` | Documentación redactada de cada script: propósito, entradas, procedimiento y salidas. |
+| `DOCUMENTACION_cabeceras.md` | Cabeceras y comentarios de todos los scripts tal como están en el código, reunidos por `generar_documentacion.py`; conservan las notas de desarrollo. |
 
 No se incluyen los archivos por punto (coordenadas, variables extraídas, predicciones fuera de pliegue ni auditoría punto a punto) ni los rásteres del cubo de datos. Las 600 etiquetas débiles se derivan de ESA WorldCover 2021 con un filtro de pureza de 3 × 3 píxeles y balance de 150 puntos por clase; su construcción se describe en el informe y en `scripts/piloto_benchmark/BENCHMARK_DESIGN.md`.
 
