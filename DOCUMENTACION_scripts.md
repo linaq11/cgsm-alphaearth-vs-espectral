@@ -88,6 +88,14 @@ Procedimiento. La unidad que se permuta es el bloque espacial del propio esquema
 
 Salidas. `representaciones_2021/permutacion_bloques.json`, con las secciones `principal`, `sensibilidad_etiquetas` y `diez_pliegues`.
 
+### `variograma_residuos_finales.py`
+
+Propósito. Comprueba el supuesto de la validación por bloques sobre los modelos finales: variograma del indicador de error de clasificación fuera de pliegue (Roberts et al., 2017) para la línea base multitemporal, AlphaEarth y la combinación en el régimen de 6 km, con el mismo estimador que `run_benchmark.residual_range` (14 rezagos, ventana del 30 % de la extensión, sin quitar tendencia).
+
+Entradas. `representaciones_2021/cv_predictions.csv` y las coordenadas de los puntos.
+
+Salidas. `representaciones_2021/variograma_residuos.json`: alcance práctico de 525 m para la línea base y la combinación y de 2.627 m para AlphaEarth; 1.576 m y 2.627 m para la comparación inicial de una sola fecha.
+
 ## 4. Pruebas de sensibilidad
 
 ### `auditoria_etiquetas.py`

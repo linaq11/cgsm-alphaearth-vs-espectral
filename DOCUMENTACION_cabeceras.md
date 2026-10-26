@@ -356,6 +356,19 @@ Comentarios en el código:
 - línea 82: a hace de base, c de otro
 
 
+### `variograma_residuos_finales.py`
+
+```
+Variograma del indicador de error de clasificacion (residuo, Roberts et al. 2017) para los modelos FINALES del Informe 1
+en el regimen de bloques de 6 km: linea base multitemporal (30 variables), AlphaEarth (64) y la combinacion (94). Repite
+exactamente el procedimiento de run_benchmark.residual_range (14 rezagos, ventana del 30 % de la extension, sin quitar
+tendencia) sobre las predicciones fuera de pliegue de representaciones_2021/cv_predictions.csv, para comprobar que el
+alcance de los residuos sigue por debajo del lado del bloque y de la zona de exclusion de 3 km.
+SALIDA: representaciones_2021/variograma_residuos.json
+USO: python -X utf8 variograma_residuos_finales.py
+```
+
+
 ## 4. Pruebas de sensibilidad
 
 
@@ -531,3 +544,9 @@ negrita, salvo la ultima, que es el titulo.
 USO
     python informe_a_word.py
 ```
+
+
+Comentarios en el código:
+
+- línea 122: separación como en el informe de Prog SIG
+- línea 146: Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)
