@@ -7,7 +7,7 @@ de AlphaEarth (anuales, 2021). El piloto de agosto uso una sola fecha (marzo de
 2021), de modo que no podia separar "mejor representacion" de "mas tiempo
 observado". Este guion construye la linea base espectral con estacion seca y
 humeda de 2021 desde el cubo, con los MISMOS 600 puntos, pliegues y motor de
-Random Forest del piloto, para que la comparacion del informe 2 sea justa.
+Random Forest del piloto, para que la comparacion del informe tenga equivalencia temporal.
 
 ENTRADAS. Compuestos mensuales del cubo publicados en Earth Engine
 (projects/basic-buttress-338101/assets/cgsm_datacube_v1/s2/2021MM, B2-B12 x10000,

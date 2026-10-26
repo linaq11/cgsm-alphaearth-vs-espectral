@@ -5,7 +5,7 @@ PARA QUE. El piloto de agosto comparo variables espectrales de UNA fecha (marzo 
 2021, 9 variables) contra las representaciones anuales de AlphaEarth (64), de modo
 que no separaba "mejor representacion" de "mas tiempo observado". La linea base
 multitemporal (linea_base_2021.py) arreglo el lado espectral pero no volvio a
-correr AlphaEarth contra ella. Este guion pone las dos en la misma mesa: mismos
+correr AlphaEarth contra ella. Este script compara ambas fuentes en condiciones equivalentes: mismos
 600 puntos, mismos pliegues, mismo Random Forest, y solo cambia la entrada.
 
 PREGUNTAS QUE RESPONDE

@@ -5,7 +5,7 @@ Repite la comparacion central (linea base multitemporal, AlphaEarth, union) sin 
 puntos cuya etiqueta WorldCover contradice a Global Mangrove Watch 2020 o, para agua,
 a Dynamic World 2021 (auditoria_etiquetas.py, columna 'conflicto'). Mismos pliegues,
 misma reserva, mismo motor. No reemplaza los resultados del informe: comprueba si
-las dos conclusiones centrales se sostienen con etiquetas mas limpias.
+las dos conclusiones centrales se sostienen con el subconjunto sin los conflictos identificados.
 Salida: sensibilidad_etiquetas/
 """
 import json

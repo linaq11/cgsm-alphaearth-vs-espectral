@@ -241,7 +241,7 @@ de AlphaEarth (anuales, 2021). El piloto de agosto uso una sola fecha (marzo de
 2021), de modo que no podia separar "mejor representacion" de "mas tiempo
 observado". Este guion construye la linea base espectral con estacion seca y
 humeda de 2021 desde el cubo, con los MISMOS 600 puntos, pliegues y motor de
-Random Forest del piloto, para que la comparacion del informe 2 sea justa.
+Random Forest del piloto, para que la comparacion del informe tenga equivalencia temporal.
 
 ENTRADAS. Compuestos mensuales del cubo publicados en Earth Engine
 (projects/basic-buttress-338101/assets/cgsm_datacube_v1/s2/2021MM, B2-B12 x10000,
@@ -293,7 +293,7 @@ PARA QUE. El piloto de agosto comparo variables espectrales de UNA fecha (marzo 
 2021, 9 variables) contra las representaciones anuales de AlphaEarth (64), de modo
 que no separaba "mejor representacion" de "mas tiempo observado". La linea base
 multitemporal (linea_base_2021.py) arreglo el lado espectral pero no volvio a
-correr AlphaEarth contra ella. Este guion pone las dos en la misma mesa: mismos
+correr AlphaEarth contra ella. Este script compara ambas fuentes en condiciones equivalentes: mismos
 600 puntos, mismos pliegues, mismo Random Forest, y solo cambia la entrada.
 
 PREGUNTAS QUE RESPONDE
@@ -336,7 +336,7 @@ Comentarios en el código:
 Rehace las comparaciones pareadas del Informe 1 con una prueba valida bajo dependencia espacial.
 
 McNemar sobre las predicciones fuera de pliegue reunidas trata cada punto como una prueba
-independiente, y los puntos vecinos no lo son: su p sale optimista. Aqui la unidad que se
+independiente, y los puntos vecinos no lo son: la dependencia espacial produce valores p demasiado pequenos. Aqui la unidad que se
 permuta es el bloque espacial del propio regimen (6 km o 16 km):
 
   - permutacion pareada: en cada repeticion se intercambian al azar, bloque por bloque, las
@@ -366,7 +366,7 @@ Auditoria de las 600 etiquetas debiles (WorldCover 2021) contra dos productos
 independientes, sin reetiquetar nada:
   - Global Mangrove Watch v3.0, 2020 (vector local): la clase manglar
   - Dynamic World 2021, moda anual de la banda label: las cuatro clases
-Mide cuanto ruido de etiqueta hay, no corrige la muestra.
+Identifica discrepancias entre las etiquetas de WorldCover y dos productos cartograficos externos; no corrige la muestra.
 Salida: auditoria_etiquetas/cruce_dw.csv, resumen.json
 ```
 
@@ -390,7 +390,7 @@ Repite la comparacion central (linea base multitemporal, AlphaEarth, union) sin 
 puntos cuya etiqueta WorldCover contradice a Global Mangrove Watch 2020 o, para agua,
 a Dynamic World 2021 (auditoria_etiquetas.py, columna 'conflicto'). Mismos pliegues,
 misma reserva, mismo motor. No reemplaza los resultados del informe: comprueba si
-las dos conclusiones centrales se sostienen con etiquetas mas limpias.
+las dos conclusiones centrales se sostienen con el subconjunto sin los conflictos identificados.
 Salida: sensibilidad_etiquetas/
 ```
 
@@ -412,8 +412,7 @@ diez pliegues la prueba por pliegue puede alcanzar significancia por si sola (mi
 0,00195) y, ademas, cada punto se predice con un modelo distinto, lo que reduce la
 dependencia entre las predicciones que entran al McNemar.
 
-Mismos puntos, mismo buffer de 3 km, mismos bloques de 6 km, mismo Random Forest: lo
-unico que cambia es a cuantos pliegues se reparten los bloques (assign_blocked_folds de
+Mismos puntos, mismo buffer de 3 km, mismos bloques de 6 km, mismo Random Forest: se modifica la asignacion de los bloques a diez pliegues, conservando su tamano y la zona de exclusion (assign_blocked_folds de
 build_split.py con k=10, semilla 42).
 
 Salida: diez_pliegues/ (cv_metrics.csv, resumen.json)
@@ -422,7 +421,7 @@ Salida: diez_pliegues/ (cv_metrics.csv, resumen.json)
 
 Comentarios en el código:
 
-- línea 58: prediccion por punto, para la prueba por bloques
+- línea 57: prediccion por punto, para la prueba por bloques
 
 
 ## 5. Aplicación espacial
@@ -435,7 +434,7 @@ Mapa de clasificacion del informe 1: las tres configuraciones de entrada
 llevadas a toda el area de estudio, y el mapa de desacuerdo entre ellas.
 
 PARA QUE. El informe compara representaciones con metricas puntuales sobre 600
-puntos. Una cifra de macro-F1 no dice DONDE cambia el mapa. Este guion lleva las
+puntos. Las metricas agregadas no muestran donde cambia el mapa. Este guion lleva las
 tres configuraciones al area completa para mostrar que la ventaja de 0,038 de
 AlphaEarth no se reparte de forma uniforme, sino que se concentra en los bordes
 del manglar y en el humedal herbaceo.
@@ -445,8 +444,7 @@ los 600 puntos. Un Random Forest de scikit-learn no se puede aplicar a un raster
 de 43 millones de pixeles desde este equipo, de modo que el mapa se produce con
 ee.Classifier.smileRandomForest en Earth Engine, entrenado con los MISMOS 429
 puntos con buffer, las MISMAS variables y los mismos hiperparametros elegidos por
-la validacion interna (sqrt, hoja minima 2). No es el mismo modelo, es la misma
-receta en otro motor. El guion mide esa brecha: reclasifica los 132 puntos de la
+la validacion interna (sqrt, hoja minima 2). Son configuraciones equivalentes en dos implementaciones distintas de Random Forest, contrastadas sobre la reserva. El guion mide esa brecha: reclasifica los 132 puntos de la
 reserva con el modelo de Earth Engine y reporta el macro-F1 y el acuerdo punto a
 punto contra las predicciones de scikit-learn. Esa cifra va al pie de la figura.
 
@@ -470,22 +468,22 @@ SALIDAS
 
 Comentarios en el código:
 
-- línea 65: 30
-- línea 81: --------------------------------------------------------------------------
-- línea 82: 1. Pila de variables en Earth Engine, con las mismas definiciones del informe
-- línea 83: --------------------------------------------------------------------------
-- línea 115: --------------------------------------------------------------------------
-- línea 116: 2. Los mismos 429 puntos de entrenamiento que usa reserva() en el informe
-- línea 117: --------------------------------------------------------------------------
-- línea 119: misma union verificada (coordenadas y clases) que usa el informe
-- línea 140: --------------------------------------------------------------------------
-- línea 141: 3. Predicciones de scikit-learn en la reserva, para medir la brecha de motor
-- línea 142: --------------------------------------------------------------------------
-- línea 159: --------------------------------------------------------------------------
-- línea 160: 4. Miniaturas
-- línea 161: --------------------------------------------------------------------------
-- línea 208: brecha de motor: reclasificar la reserva y comparar con scikit-learn
-- línea 240: fraccion del area donde las dos representaciones discrepan
+- línea 64: 30
+- línea 80: --------------------------------------------------------------------------
+- línea 81: 1. Pila de variables en Earth Engine, con las mismas definiciones del informe
+- línea 82: --------------------------------------------------------------------------
+- línea 114: --------------------------------------------------------------------------
+- línea 115: 2. Los mismos 429 puntos de entrenamiento que usa reserva() en el informe
+- línea 116: --------------------------------------------------------------------------
+- línea 118: misma union verificada (coordenadas y clases) que usa el informe
+- línea 139: --------------------------------------------------------------------------
+- línea 140: 3. Predicciones de scikit-learn en la reserva, para medir la brecha de motor
+- línea 141: --------------------------------------------------------------------------
+- línea 158: --------------------------------------------------------------------------
+- línea 159: 4. Miniaturas
+- línea 160: --------------------------------------------------------------------------
+- línea 207: brecha de motor: reclasificar la reserva y comparar con scikit-learn
+- línea 239: fraccion del area donde las dos representaciones discrepan
 
 
 ### `mapa_desacuerdo_clases.py`
@@ -504,21 +502,20 @@ Salida: mapa_clasificacion/desacuerdo_por_clases.json
 
 ```
 Figura principal del informe 1: macro-F1 por configuracion de entrada y regimen de
-validacion, con la desviacion entre pliegues como referencia de lo que es una diferencia
-apreciable. Figuras en ingles. Salida: figuras/fig_representaciones.png
+validacion, con la desviacion entre pliegues como referencia de una diferencia de desempeno en relacion con la variabilidad entre pliegues. Figuras en ingles. Salida: figuras/fig_representaciones.png
 ```
 
 
 Comentarios en el código:
 
-- línea 44: barra de error solo en el regimen principal: desviacion entre los cinco pliegues espaciales
-- línea 48: etiquetas horizontales, siempre por encima de la barra y de su barra de error
-- línea 62: panel b: diferencia PAREADA frente a la linea base, pliegue por pliegue. La barra es la
-- línea 63: sd de la diferencia, no la sd de cada configuracion: los sectores dificiles lo son para
-- línea 64: las dos entradas y esa parte comun no es incertidumbre de la diferencia.
-- línea 76: p de la permutacion pareada por bloques (permutacion_bloques.py), no el de McNemar,
-- línea 77: que trata como independientes puntos vecinos
-- línea 95: resumen numerico para el texto
+- línea 43: barra de error solo en el regimen principal: desviacion entre los cinco pliegues espaciales
+- línea 47: etiquetas horizontales, siempre por encima de la barra y de su barra de error
+- línea 61: panel b: diferencia PAREADA frente a la linea base, pliegue por pliegue. La barra es la
+- línea 62: sd de la diferencia, no la sd de cada configuracion: los sectores dificiles lo son para
+- línea 63: las dos entradas y esa parte comun no es incertidumbre de la diferencia.
+- línea 75: p de la permutacion pareada por bloques (permutacion_bloques.py), no el de McNemar,
+- línea 76: que trata como independientes puntos vecinos
+- línea 94: resumen numerico para el texto
 
 
 ### `informe_a_word.py`

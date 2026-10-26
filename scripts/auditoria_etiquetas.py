@@ -3,7 +3,7 @@
 independientes, sin reetiquetar nada:
   - Global Mangrove Watch v3.0, 2020 (vector local): la clase manglar
   - Dynamic World 2021, moda anual de la banda label: las cuatro clases
-Mide cuanto ruido de etiqueta hay, no corrige la muestra.
+Identifica discrepancias entre las etiquetas de WorldCover y dos productos cartograficos externos; no corrige la muestra.
 Salida: auditoria_etiquetas/cruce_dw.csv, resumen.json
 """
 import json

@@ -2,7 +2,7 @@
 r"""Rehace las comparaciones pareadas del Informe 1 con una prueba valida bajo dependencia espacial.
 
 McNemar sobre las predicciones fuera de pliegue reunidas trata cada punto como una prueba
-independiente, y los puntos vecinos no lo son: su p sale optimista. Aqui la unidad que se
+independiente, y los puntos vecinos no lo son: la dependencia espacial produce valores p demasiado pequenos. Aqui la unidad que se
 permuta es el bloque espacial del propio regimen (6 km o 16 km):
 
   - permutacion pareada: en cada repeticion se intercambian al azar, bloque por bloque, las

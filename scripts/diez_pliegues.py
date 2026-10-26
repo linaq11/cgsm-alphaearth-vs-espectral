@@ -8,8 +8,7 @@ diez pliegues la prueba por pliegue puede alcanzar significancia por si sola (mi
 0,00195) y, ademas, cada punto se predice con un modelo distinto, lo que reduce la
 dependencia entre las predicciones que entran al McNemar.
 
-Mismos puntos, mismo buffer de 3 km, mismos bloques de 6 km, mismo Random Forest: lo
-unico que cambia es a cuantos pliegues se reparten los bloques (assign_blocked_folds de
+Mismos puntos, mismo buffer de 3 km, mismos bloques de 6 km, mismo Random Forest: se modifica la asignacion de los bloques a diez pliegues, conservando su tamano y la zona de exclusion (assign_blocked_folds de
 build_split.py con k=10, semilla 42).
 
 Salida: diez_pliegues/ (cv_metrics.csv, resumen.json)

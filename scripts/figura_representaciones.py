@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Figura principal del informe 1: macro-F1 por configuracion de entrada y regimen de
-validacion, con la desviacion entre pliegues como referencia de lo que es una diferencia
-apreciable. Figuras en ingles. Salida: figuras/fig_representaciones.png
+validacion, con la desviacion entre pliegues como referencia de una diferencia de desempeno en relacion con la variabilidad entre pliegues. Figuras en ingles. Salida: figuras/fig_representaciones.png
 """
 import json
 import os

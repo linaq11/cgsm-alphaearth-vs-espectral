@@ -3,7 +3,7 @@ r"""Mapa de clasificacion del informe 1: las tres configuraciones de entrada
 llevadas a toda el area de estudio, y el mapa de desacuerdo entre ellas.
 
 PARA QUE. El informe compara representaciones con metricas puntuales sobre 600
-puntos. Una cifra de macro-F1 no dice DONDE cambia el mapa. Este guion lleva las
+puntos. Las metricas agregadas no muestran donde cambia el mapa. Este guion lleva las
 tres configuraciones al area completa para mostrar que la ventaja de 0,038 de
 AlphaEarth no se reparte de forma uniforme, sino que se concentra en los bordes
 del manglar y en el humedal herbaceo.
@@ -13,8 +13,7 @@ los 600 puntos. Un Random Forest de scikit-learn no se puede aplicar a un raster
 de 43 millones de pixeles desde este equipo, de modo que el mapa se produce con
 ee.Classifier.smileRandomForest en Earth Engine, entrenado con los MISMOS 429
 puntos con buffer, las MISMAS variables y los mismos hiperparametros elegidos por
-la validacion interna (sqrt, hoja minima 2). No es el mismo modelo, es la misma
-receta en otro motor. El guion mide esa brecha: reclasifica los 132 puntos de la
+la validacion interna (sqrt, hoja minima 2). Son configuraciones equivalentes en dos implementaciones distintas de Random Forest, contrastadas sobre la reserva. El guion mide esa brecha: reclasifica los 132 puntos de la
 reserva con el modelo de Earth Engine y reporta el macro-F1 y el acuerdo punto a
 punto contra las predicciones de scikit-learn. Esa cifra va al pie de la figura.
 
