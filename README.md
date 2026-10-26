@@ -38,9 +38,11 @@ El informe completo está en `informe/Informe1.md` y en PDF en la misma carpeta.
 6. `mapa_clasificacion.py` y `mapa_desacuerdo_clases.py`, aplicación cartográfica: las tres configuraciones principales sobre el dominio con el Random Forest de Earth Engine, comprobación frente a scikit-learn en la reserva y caracterización del desacuerdo entre mapas.
 7. `figura_representaciones.py` e `informe_a_word.py`: figura principal y conversión del informe a Word.
 
-## Requisitos
+## Requisitos y reproducibilidad
 
 Python 3.12 o superior y los paquetes de `requirements.txt`. Los scripts que consultan Google Earth Engine requieren una cuenta autenticada y un proyecto de Google Cloud con Earth Engine habilitado.
+
+El código conserva rutas del entorno original de ejecución (`C:\LINA\UNAL 2626-1\...`) y depende de insumos que no se distribuyen aquí: los compuestos del cubo de datos y los archivos por punto. Para correr el flujo completo hay que disponer de esos insumos y adaptar las rutas. Los mapas se producen con el Random Forest de Earth Engine, una implementación equivalente en su configuración a la de scikit-learn pero no idéntica en todos sus cálculos; la diferencia se mide en la reserva y se declara en el informe.
 
 Fuentes de datos, todas abiertas:
 
