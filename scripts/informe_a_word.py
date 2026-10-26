@@ -27,33 +27,40 @@ ACENTO = "2E5090"
 BLANCO = RGBColor(0xFF, 0xFF, 0xFF)
 
 
-def hipervinculo(p, texto, url, tam):
+def hipervinculo(p, texto, url, tam, cursiva=False):
     """Enlace real en el .docx: run azul subrayado dentro de w:hyperlink."""
     rid = p.part.relate_to(url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
     h = OxmlElement("w:hyperlink"); h.set(qn("r:id"), rid)
     r = OxmlElement("w:r"); rpr = OxmlElement("w:rPr"); c = OxmlElement("w:color"); c.set(qn("w:val"), "0563C1"); u = OxmlElement("w:u"); u.set(qn("w:val"), "single")
-    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), str(int(tam * 2))); rpr.append(c); rpr.append(u); rpr.append(sz); r.append(rpr)
-    t = OxmlElement("w:t"); t.text = texto; t.set(qn("xml:space"), "preserve"); r.append(t); h.append(r); p._p.append(h)
+    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), str(int(tam * 2))); rpr.append(c); rpr.append(u); rpr.append(sz)
+    if cursiva: rpr.append(OxmlElement("w:i"))
+    r.append(rpr); t = OxmlElement("w:t"); t.text = texto; t.set(qn("xml:space"), "preserve"); r.append(t); h.append(r); p._p.append(h)
+
+
+ENLACE = re.compile(r"\[([^\]]+)\]\((https?://[^)]+)\)")
 
 
 def corridas(p, texto, tam=11, negrita=False, cursiva=False, color=None):
-    for trozo in re.split(r"(\*\*.+?\*\*|\*.+?\*|\[[^\]]+\]\(https?://[^)]+\))", texto):
+    for trozo in re.split(r"(\*\*.+?\*\*|\*.+?\*)", texto):
         if not trozo:
             continue
-        m = re.fullmatch(r"\[([^\]]+)\]\((https?://[^)]+)\)", trozo)
-        if m:
-            hipervinculo(p, m.group(1), m.group(2), tam); continue
         neg, cur, t = negrita, cursiva, trozo
         if trozo.startswith("**"):
             neg, t = True, trozo[2:-2]
         elif trozo.startswith("*"):
             cur, t = True, trozo[1:-1]
-        r = p.add_run(t)
-        r.font.size = Pt(tam)
-        r.bold = neg or None
-        r.italic = cur or None
-        if color is not None:
-            r.font.color.rgb = color
+        for sub in re.split(r"(\[[^\]]+\]\(https?://[^)]+\))", t):
+            if not sub:
+                continue
+            m = ENLACE.fullmatch(sub)
+            if m:
+                hipervinculo(p, m.group(1), m.group(2), tam, cursiva=cur); continue
+            r = p.add_run(sub)
+            r.font.size = Pt(tam)
+            r.bold = neg or None
+            r.italic = cur or None
+            if color is not None:
+                r.font.color.rgb = color
 
 
 def parrafo(d, texto, tam=11, justificar=True, despues=6, negrita=False, cursiva=False, centrar=False):
