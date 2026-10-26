@@ -3,6 +3,8 @@ Maestría en Geomática
 Percepción Remota Avanzada, 2026-2
 Informe 1
 Lina María Quintero Fonseca
+Código y resultados: [github.com/linaq11/cgsm-alphaearth-vs-espectral](https://github.com/linaq11/cgsm-alphaearth-vs-espectral)
+
 Representaciones de modelos fundacionales frente a variables espectrales para la clasificación de coberturas asociadas al manglar en la Ciénaga Grande de Santa Marta: una comparación con validación espacial
 
 ## Resumen
@@ -228,7 +230,7 @@ Como continuación del análisis, se plantea comprobar si los patrones observado
 
 ## Disponibilidad de datos y código
 
-Los scripts del experimento, el motor de validación espacial, los resultados tabulados y las figuras del informe están en el repositorio público https://github.com/linaq11/cgsm-alphaearth-vs-espectral, bajo licencia MIT. Los compuestos mensuales de Sentinel-2 provienen del cubo de datos de la tesis, las representaciones de AlphaEarth de la colección `GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL` de Earth Engine y las etiquetas débiles de ESA WorldCover 2021, con los criterios de muestreo descritos en la sección de datos; los archivos por punto no se distribuyen con el informe.
+Los scripts del experimento, el motor de validación espacial, los resultados tabulados y las figuras del informe están disponibles en el repositorio público [cgsm-alphaearth-vs-espectral](https://github.com/linaq11/cgsm-alphaearth-vs-espectral), bajo licencia MIT. Los compuestos mensuales de Sentinel-2 proceden del cubo de datos desarrollado para la tesis; las representaciones de AlphaEarth se obtuvieron de la colección `GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL` de Google Earth Engine, y las etiquetas de referencia se derivaron de ESA WorldCover 2021, siguiendo los criterios de muestreo descritos en la sección de datos. Los archivos individuales por punto no se incluyen en el repositorio.
 
 ## Bibliografía
 

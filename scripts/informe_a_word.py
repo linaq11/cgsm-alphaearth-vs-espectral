@@ -27,10 +27,22 @@ ACENTO = "2E5090"
 BLANCO = RGBColor(0xFF, 0xFF, 0xFF)
 
 
+def hipervinculo(p, texto, url, tam):
+    """Enlace real en el .docx: run azul subrayado dentro de w:hyperlink."""
+    rid = p.part.relate_to(url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
+    h = OxmlElement("w:hyperlink"); h.set(qn("r:id"), rid)
+    r = OxmlElement("w:r"); rpr = OxmlElement("w:rPr"); c = OxmlElement("w:color"); c.set(qn("w:val"), "0563C1"); u = OxmlElement("w:u"); u.set(qn("w:val"), "single")
+    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), str(int(tam * 2))); rpr.append(c); rpr.append(u); rpr.append(sz); r.append(rpr)
+    t = OxmlElement("w:t"); t.text = texto; t.set(qn("xml:space"), "preserve"); r.append(t); h.append(r); p._p.append(h)
+
+
 def corridas(p, texto, tam=11, negrita=False, cursiva=False, color=None):
-    for trozo in re.split(r"(\*\*.+?\*\*|\*.+?\*)", texto):
+    for trozo in re.split(r"(\*\*.+?\*\*|\*.+?\*|\[[^\]]+\]\(https?://[^)]+\))", texto):
         if not trozo:
             continue
+        m = re.fullmatch(r"\[([^\]]+)\]\((https?://[^)]+)\)", trozo)
+        if m:
+            hipervinculo(p, m.group(1), m.group(2), tam); continue
         neg, cur, t = negrita, cursiva, trozo
         if trozo.startswith("**"):
             neg, t = True, trozo[2:-2]
