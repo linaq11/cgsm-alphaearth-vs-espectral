@@ -1,0 +1,32 @@
+{
+ "pares_pct_del_area": {
+  "agua -> agua": 42.19,
+  "humedal_herbaceo -> humedal_herbaceo": 15.78,
+  "otro -> otro": 15.64,
+  "manglar -> manglar": 15.07,
+  "otro -> humedal_herbaceo": 2.92,
+  "manglar -> humedal_herbaceo": 2.53,
+  "humedal_herbaceo -> otro": 2.13,
+  "humedal_herbaceo -> manglar": 1.56,
+  "agua -> humedal_herbaceo": 1.07,
+  "humedal_herbaceo -> agua": 0.68,
+  "manglar -> agua": 0.1,
+  "otro -> manglar": 0.08,
+  "agua -> manglar": 0.08,
+  "manglar -> otro": 0.07,
+  "otro -> agua": 0.07,
+  "agua -> otro": 0.03
+ },
+ "area_pct_s2": {
+  "agua": 43.37,
+  "humedal_herbaceo": 20.15,
+  "otro": 18.72,
+  "manglar": 17.77
+ },
+ "area_pct_ae": {
+  "agua": 43.04,
+  "humedal_herbaceo": 22.3,
+  "otro": 17.87,
+  "manglar": 16.79
+ }
+}

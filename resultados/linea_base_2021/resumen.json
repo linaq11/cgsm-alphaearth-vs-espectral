@@ -1,0 +1,113 @@
+{
+  "mcnemar": {
+    "s2_marzo vs s2_seca_humeda": {
+      "solo_a": 9,
+      "solo_b": 19,
+      "p": 0.08715855330228806
+    },
+    "s2_marzo vs s2_multitemporal": {
+      "solo_a": 8,
+      "solo_b": 21,
+      "p": 0.0241195447742939
+    },
+    "s2_seca_humeda vs s2_multitemporal": {
+      "solo_a": 2,
+      "solo_b": 5,
+      "p": 0.453125
+    }
+  },
+  "importancias": {
+    "s2_marzo": {
+      "mar_B2": 0.0226,
+      "mar_B3": 0.0374,
+      "mar_B4": 0.0458,
+      "mar_B8": 0.1101,
+      "mar_B11": 0.2197,
+      "mar_B12": 0.1244,
+      "mar_NDVI": 0.1736,
+      "mar_NDWI": 0.1608,
+      "mar_MNDWI": 0.1056
+    },
+    "s2_seca": {
+      "seca_B2": 0.0275,
+      "seca_B3": 0.0435,
+      "seca_B4": 0.0591,
+      "seca_B8": 0.1255,
+      "seca_B11": 0.2281,
+      "seca_B12": 0.1337,
+      "seca_NDVI": 0.1324,
+      "seca_NDWI": 0.1504,
+      "seca_MNDWI": 0.0999
+    },
+    "s2_humeda": {
+      "hum_B2": 0.0387,
+      "hum_B3": 0.0468,
+      "hum_B4": 0.0722,
+      "hum_B8": 0.125,
+      "hum_B11": 0.1511,
+      "hum_B12": 0.1146,
+      "hum_NDVI": 0.1486,
+      "hum_NDWI": 0.1992,
+      "hum_MNDWI": 0.1038
+    },
+    "s2_seca_humeda": {
+      "seca_B2": 0.0084,
+      "seca_B3": 0.0094,
+      "seca_B4": 0.0165,
+      "seca_B8": 0.0845,
+      "seca_B11": 0.2032,
+      "seca_B12": 0.0934,
+      "seca_NDVI": 0.0677,
+      "seca_NDWI": 0.1505,
+      "seca_MNDWI": 0.0421,
+      "hum_B2": 0.0119,
+      "hum_B3": 0.0108,
+      "hum_B4": 0.0304,
+      "hum_B8": 0.0299,
+      "hum_B11": 0.04,
+      "hum_B12": 0.0365,
+      "hum_NDVI": 0.0342,
+      "hum_NDWI": 0.1095,
+      "hum_MNDWI": 0.021
+    },
+    "s2_multitemporal": {
+      "seca_B2": 0.013,
+      "seca_B3": 0.0185,
+      "seca_B4": 0.0231,
+      "seca_B8": 0.0362,
+      "seca_B11": 0.1014,
+      "seca_B12": 0.0676,
+      "seca_NDVI": 0.0484,
+      "seca_NDWI": 0.0505,
+      "seca_MNDWI": 0.0404,
+      "hum_B2": 0.0129,
+      "hum_B3": 0.0135,
+      "hum_B4": 0.0277,
+      "hum_B8": 0.0272,
+      "hum_B11": 0.0483,
+      "hum_B12": 0.0366,
+      "hum_NDVI": 0.0307,
+      "hum_NDWI": 0.0673,
+      "hum_MNDWI": 0.024,
+      "fen_NDVI_min": 0.0646,
+      "fen_NDVI_max": 0.0276,
+      "fen_NDVI_amp": 0.0076,
+      "fen_NDVI_sd": 0.0071,
+      "fen_NDWI_min": 0.0402,
+      "fen_NDWI_max": 0.0696,
+      "fen_NDWI_amp": 0.006,
+      "fen_NDWI_sd": 0.006,
+      "fen_MNDWI_min": 0.028,
+      "fen_MNDWI_max": 0.0439,
+      "fen_MNDWI_amp": 0.0052,
+      "fen_MNDWI_sd": 0.0069
+    }
+  },
+  "n": 600,
+  "clases": [
+    "agua",
+    "humedal_herbaceo",
+    "manglar",
+    "otro"
+  ]
+}

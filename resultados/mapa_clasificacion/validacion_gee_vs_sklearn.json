@@ -1,0 +1,21 @@
+{
+ "s2_multitemporal": {
+  "macro_f1_gee": 0.731,
+  "macro_f1_sklearn": 0.758,
+  "acuerdo_gee_sklearn": 0.962,
+  "n": 132
+ },
+ "alphaearth": {
+  "macro_f1_gee": 0.761,
+  "macro_f1_sklearn": 0.781,
+  "acuerdo_gee_sklearn": 0.962,
+  "n": 132
+ },
+ "s2_multi_mas_alphaearth": {
+  "macro_f1_gee": 0.77,
+  "macro_f1_sklearn": 0.762,
+  "acuerdo_gee_sklearn": 0.977,
+  "n": 132
+ },
+ "fraccion_desacuerdo_ae_vs_s2": 0.1132
+}

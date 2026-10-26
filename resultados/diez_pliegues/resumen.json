@@ -1,0 +1,59 @@
+{
+ "n_bloques": 53,
+ "n_pliegues": 10,
+ "macro_f1": {
+  "s2_multitemporal": 0.836,
+  "alphaearth": 0.845,
+  "s2_multi_mas_alphaearth": 0.858
+ },
+ "pareadas": {
+  "alphaearth": {
+   "d_media": 0.003,
+   "sd_pareada": 0.063,
+   "gana": "5/10",
+   "p_signos": 1.0,
+   "mcnemar": {
+    "n": 468,
+    "solo_base": 30,
+    "solo_otro": 33,
+    "p": 0.80131
+   },
+   "d_por_pliegue": [
+    -0.018,
+    -0.061,
+    0.066,
+    0.075,
+    -0.111,
+    0.032,
+    0.076,
+    0.027,
+    -0.015,
+    -0.043
+   ]
+  },
+  "s2_multi_mas_alphaearth": {
+   "d_media": 0.022,
+   "sd_pareada": 0.061,
+   "gana": "6/10",
+   "p_signos": 0.75391,
+   "mcnemar": {
+    "n": 468,
+    "solo_base": 16,
+    "solo_otro": 26,
+    "p": 0.16415
+   },
+   "d_por_pliegue": [
+    -0.038,
+    -0.001,
+    0.044,
+    0.095,
+    -0.095,
+    0.035,
+    -0.02,
+    0.103,
+    0.052,
+    0.046
+   ]
+  }
+ }
+}

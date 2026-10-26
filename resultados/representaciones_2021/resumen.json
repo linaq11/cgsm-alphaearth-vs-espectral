@@ -1,0 +1,88 @@
+{
+ "tabla_macro_f1": {
+  "s2_marzo": {
+   "n_vars": 9,
+   "random": 0.835,
+   "block_6km": 0.795,
+   "block_16km": 0.733,
+   "reserva": 0.676
+  },
+  "s2_seca_humeda": {
+   "n_vars": 18,
+   "random": 0.854,
+   "block_6km": 0.804,
+   "block_16km": 0.71,
+   "reserva": 0.74
+  },
+  "s2_multitemporal": {
+   "n_vars": 30,
+   "random": 0.851,
+   "block_6km": 0.808,
+   "block_16km": 0.703,
+   "reserva": 0.758
+  },
+  "alphaearth": {
+   "n_vars": 64,
+   "random": 0.887,
+   "block_6km": 0.846,
+   "block_16km": 0.708,
+   "reserva": 0.781
+  },
+  "s2_multi_mas_alphaearth": {
+   "n_vars": 94,
+   "random": 0.882,
+   "block_6km": 0.863,
+   "block_16km": 0.738,
+   "reserva": 0.762
+  }
+ },
+ "sd_pliegues_6km": {
+  "alphaearth": 0.077,
+  "s2_marzo": 0.046,
+  "s2_multi_mas_alphaearth": 0.071,
+  "s2_multitemporal": 0.047,
+  "s2_seca_humeda": 0.031
+ },
+ "mcnemar_reserva": {
+  "s2_multitemporal vs s2_marzo": {
+   "solo_base": 21,
+   "solo_otro": 8,
+   "p": 0.0241195447742939
+  },
+  "s2_multitemporal vs s2_seca_humeda": {
+   "solo_base": 5,
+   "solo_otro": 2,
+   "p": 0.453125
+  },
+  "s2_multitemporal vs alphaearth": {
+   "solo_base": 12,
+   "solo_otro": 14,
+   "p": 0.8450189828872681
+  },
+  "s2_multitemporal vs s2_multi_mas_alphaearth": {
+   "solo_base": 9,
+   "solo_otro": 8,
+   "p": 1.0
+  }
+ },
+ "mlp": {
+  "s2_multitemporal": {
+   "n_vars": 30,
+   "n": 468,
+   "oa": 0.6623931624,
+   "macro_f1": 0.6300046674
+  },
+  "alphaearth": {
+   "n_vars": 64,
+   "n": 468,
+   "oa": 0.8141025641,
+   "macro_f1": 0.8079116794
+  },
+  "s2_multi_mas_alphaearth": {
+   "n_vars": 94,
+   "n": 468,
+   "oa": 0.811965812,
+   "macro_f1": 0.8092835297
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "gmw_fraccion_dentro_por_clase": {
+  "agua": 0.04,
+  "humedal_herbaceo": 0.133,
+  "manglar": 0.787,
+  "otro": 0.093
+ },
+ "dw_acuerdo_por_clase": {
+  "agua": 0.947,
+  "humedal_herbaceo": 0.427,
+  "manglar": 0.96,
+  "otro": 0.933
+ },
+ "dw_observaciones_mediana": 38.0,
+ "mapeo": {
+  "agua": [
+   "water"
+  ],
+  "manglar": [
+   "flooded_vegetation",
+   "trees"
+  ],
+  "humedal_herbaceo": [
+   "flooded_vegetation",
+   "grass"
+  ],
+  "otro": [
+   "bare",
+   "built",
+   "crops",
+   "grass",
+   "shrub_and_scrub",
+   "trees"
+  ]
+ }
+}

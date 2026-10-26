@@ -1,0 +1,22 @@
+{
+ "s2_multitemporal vs s2_marzo": {
+  "solo_base": 21,
+  "solo_otro": 8,
+  "p": 0.0241195447742939
+ },
+ "s2_multitemporal vs s2_seca_humeda": {
+  "solo_base": 5,
+  "solo_otro": 2,
+  "p": 0.453125
+ },
+ "s2_multitemporal vs alphaearth": {
+  "solo_base": 12,
+  "solo_otro": 14,
+  "p": 0.8450189828872681
+ },
+ "s2_multitemporal vs s2_multi_mas_alphaearth": {
+  "solo_base": 9,
+  "solo_otro": 8,
+  "p": 1.0
+ }
+}

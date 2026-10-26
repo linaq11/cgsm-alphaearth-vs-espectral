@@ -1,0 +1,94 @@
+{
+ "n": 523,
+ "quitados": 77,
+ "macro_f1": {
+  "s2_multitemporal": {
+   "random": 0.891,
+   "block_6km": 0.846,
+   "block_16km": 0.753,
+   "reserva": 0.837
+  },
+  "alphaearth": {
+   "random": 0.908,
+   "block_6km": 0.88,
+   "block_16km": 0.76,
+   "reserva": 0.816
+  },
+  "s2_multi_mas_alphaearth": {
+   "random": 0.915,
+   "block_6km": 0.885,
+   "block_16km": 0.777,
+   "reserva": 0.825
+  }
+ },
+ "f1_clase_6km": {
+  "s2_multitemporal": {
+   "f1_agua": 0.983,
+   "f1_humedal_herbaceo": 0.717,
+   "f1_manglar": 0.88,
+   "f1_otro": 0.804
+  },
+  "alphaearth": {
+   "f1_agua": 0.992,
+   "f1_humedal_herbaceo": 0.787,
+   "f1_manglar": 0.898,
+   "f1_otro": 0.844
+  },
+  "s2_multi_mas_alphaearth": {
+   "f1_agua": 0.987,
+   "f1_humedal_herbaceo": 0.802,
+   "f1_manglar": 0.905,
+   "f1_otro": 0.846
+  }
+ },
+ "pareadas": {
+  "block_6km|alphaearth": {
+   "d_media": 0.036,
+   "sd": 0.032,
+   "gana": "5/5",
+   "n": 415,
+   "solo_base": 11,
+   "solo_otro": 25,
+   "p": 0.02882
+  },
+  "block_6km|s2_multi_mas_alphaearth": {
+   "d_media": 0.04,
+   "sd": 0.015,
+   "gana": "5/5",
+   "n": 415,
+   "solo_base": 4,
+   "solo_otro": 20,
+   "p": 0.00154
+  },
+  "block_16km|alphaearth": {
+   "d_media": 0.001,
+   "sd": 0.079,
+   "gana": "2/3",
+   "n": 415,
+   "solo_base": 36,
+   "solo_otro": 40,
+   "p": 0.73101
+  },
+  "block_16km|s2_multi_mas_alphaearth": {
+   "d_media": 0.024,
+   "sd": 0.027,
+   "gana": "2/3",
+   "n": 415,
+   "solo_base": 18,
+   "solo_otro": 28,
+   "p": 0.18392
+  }
+ },
+ "mcnemar_reserva": {
+  "s2_multitemporal vs alphaearth": {
+   "solo_base": 10,
+   "solo_otro": 7,
+   "p": 0.629058837890625
+  },
+  "s2_multitemporal vs s2_multi_mas_alphaearth": {
+   "solo_base": 6,
+   "solo_otro": 4,
+   "p": 0.75390625
+  }
+ }
+}

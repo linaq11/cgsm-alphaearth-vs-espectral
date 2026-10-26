@@ -1,0 +1,138 @@
+{
+ "pareado_por_pliegue": {
+  "random|s2_marzo": {
+   "media": -0.0162,
+   "sd_pareada": 0.0112,
+   "sd_marginal": 0.0366,
+   "gana_en": "0/5",
+   "p_signo": 0.0625
+  },
+  "random|s2_seca_humeda": {
+   "media": 0.0029,
+   "sd_pareada": 0.0251,
+   "sd_marginal": 0.0197,
+   "gana_en": "3/5",
+   "p_signo": 1.0
+  },
+  "random|alphaearth": {
+   "media": 0.0363,
+   "sd_pareada": 0.0282,
+   "sd_marginal": 0.0341,
+   "gana_en": "4/5",
+   "p_signo": 0.375
+  },
+  "random|s2_multi_mas_alphaearth": {
+   "media": 0.0314,
+   "sd_pareada": 0.0366,
+   "sd_marginal": 0.0323,
+   "gana_en": "4/5",
+   "p_signo": 0.375
+  },
+  "block_6km|s2_marzo": {
+   "media": -0.0129,
+   "sd_pareada": 0.0274,
+   "sd_marginal": 0.0464,
+   "gana_en": "1/5",
+   "p_signo": 0.375
+  },
+  "block_6km|s2_seca_humeda": {
+   "media": -0.0078,
+   "sd_pareada": 0.0375,
+   "sd_marginal": 0.0311,
+   "gana_en": "1/5",
+   "p_signo": 0.375
+  },
+  "block_6km|alphaearth": {
+   "media": 0.0392,
+   "sd_pareada": 0.0406,
+   "sd_marginal": 0.077,
+   "gana_en": "4/5",
+   "p_signo": 0.375
+  },
+  "block_6km|s2_multi_mas_alphaearth": {
+   "media": 0.0555,
+   "sd_pareada": 0.0288,
+   "sd_marginal": 0.0707,
+   "gana_en": "5/5",
+   "p_signo": 0.0625
+  },
+  "block_16km|s2_marzo": {
+   "media": 0.0252,
+   "sd_pareada": 0.0596,
+   "sd_marginal": 0.0237,
+   "gana_en": "2/3",
+   "p_signo": 1.0
+  },
+  "block_16km|s2_seca_humeda": {
+   "media": 0.0076,
+   "sd_pareada": 0.0035,
+   "sd_marginal": 0.0345,
+   "gana_en": "3/3",
+   "p_signo": 0.25
+  },
+  "block_16km|alphaearth": {
+   "media": 0.0031,
+   "sd_pareada": 0.0106,
+   "sd_marginal": 0.0372,
+   "gana_en": "1/3",
+   "p_signo": 1.0
+  },
+  "block_16km|s2_multi_mas_alphaearth": {
+   "media": 0.0366,
+   "sd_pareada": 0.018,
+   "sd_marginal": 0.0387,
+   "gana_en": "3/3",
+   "p_signo": 0.25
+  }
+ },
+ "mcnemar_fuera_de_pliegue": {
+  "block_6km|s2_marzo": {
+   "n": 468,
+   "solo_base": 38,
+   "solo_otro": 32,
+   "p": 0.55041
+  },
+  "block_6km|s2_seca_humeda": {
+   "n": 468,
+   "solo_base": 11,
+   "solo_otro": 9,
+   "p": 0.8238
+  },
+  "block_6km|alphaearth": {
+   "n": 468,
+   "solo_base": 22,
+   "solo_otro": 39,
+   "p": 0.03962
+  },
+  "block_6km|s2_multi_mas_alphaearth": {
+   "n": 468,
+   "solo_base": 6,
+   "solo_otro": 31,
+   "p": 4e-05
+  },
+  "block_16km|s2_marzo": {
+   "n": 468,
+   "solo_base": 35,
+   "solo_otro": 45,
+   "p": 0.31431
+  },
+  "block_16km|s2_seca_humeda": {
+   "n": 468,
+   "solo_base": 6,
+   "solo_otro": 9,
+   "p": 0.60724
+  },
+  "block_16km|alphaearth": {
+   "n": 468,
+   "solo_base": 37,
+   "solo_otro": 41,
+   "p": 0.73434
+  },
+  "block_16km|s2_multi_mas_alphaearth": {
+   "n": 468,
+   "solo_base": 18,
+   "solo_otro": 34,
+   "p": 0.03648
+  }
+ }
+}

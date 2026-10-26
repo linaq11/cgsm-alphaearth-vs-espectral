@@ -1,0 +1,5 @@
+clase_nombre,bare,built,crops,flooded_vegetation,grass,shrub_and_scrub,trees,water
+agua,0,0,0,8,0,0,0,142
+humedal_herbaceo,0,2,4,53,11,12,64,4
+manglar,0,2,1,53,0,0,91,3
+otro,9,1,5,9,2,30,93,1
