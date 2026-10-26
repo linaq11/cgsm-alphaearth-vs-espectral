@@ -229,7 +229,7 @@ Los scripts del experimento, el motor de validación espacial, los resultados ta
 
 ## Declaración de uso de inteligencia artificial
 
-Durante la elaboración de este informe se utilizó Claude (Anthropic) como herramienta de apoyo en la redacción y edición de estilo, la programación y depuración de scripts, la revisión de consistencia entre el manuscrito y los resultados tabulados, y la verificación de referencias bibliográficas. El diseño experimental, la ejecución de los análisis, la interpretación de los resultados y la formulación de las conclusiones fueron responsabilidad de la autora. Los datos proceden de las fuentes descritas en el informe y los resultados cuantitativos se obtuvieron mediante la ejecución de los scripts disponibles en el repositorio público.
+Durante la elaboración de este informe se utilizó Claude (Anthropic) como herramienta de apoyo en la edición de estilo y depuración de scripts, la revisión de consistencia entre el manuscrito y los resultados tabulados, y la verificación de referencias bibliográficas. El diseño experimental, la ejecución de los análisis, la interpretación de los resultados y la formulación de las conclusiones fueron responsabilidad de la autora. Los datos proceden de las fuentes descritas en el informe y los resultados cuantitativos se obtuvieron mediante la ejecución de los scripts disponibles en el repositorio público.
 
 ## Bibliografía
 

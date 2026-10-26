@@ -118,7 +118,8 @@ def main():
     primer = next(i for i, l in enumerate(lineas) if l.startswith("## "))
     cab = [l for l in lineas[:primer] if l.strip()]
     for l in cab[:-1]:
-        parrafo(d, l, tam=11, justificar=False, despues=0, centrar=True)
+        pc = parrafo(d, l, tam=11, justificar=False, despues=0, centrar=True)
+        if l.startswith("*repositorio"): pc.paragraph_format.space_before = Pt(10)   # separación como en el informe de Prog SIG
     parrafo(d, cab[-1], tam=13, negrita=True, despues=14, centrar=True)
 
     i = primer
