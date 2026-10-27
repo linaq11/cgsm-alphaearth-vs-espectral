@@ -1,8 +1,8 @@
 Universidad Nacional de Colombia
 Maestría en Geomática
-Percepción Remota Avanzada (2026-2), Informe 1
+Percepción Remota Avanzada - Informe 1
 Lina María Quintero Fonseca
-*repositorio [https://github.com/linaq11/cgsm-alphaearth-vs-espectral](https://github.com/linaq11/cgsm-alphaearth-vs-espectral)*
+*[https://github.com/linaq11/cgsm-alphaearth-vs-espectral](https://github.com/linaq11/cgsm-alphaearth-vs-espectral)*
 
 Representaciones de modelos fundacionales frente a variables espectrales para la clasificación de coberturas asociadas al manglar en la Ciénaga Grande de Santa Marta: una comparación con validación espacial
 

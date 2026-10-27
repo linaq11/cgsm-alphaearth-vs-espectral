@@ -123,7 +123,7 @@ def main():
     cab = [l for l in lineas[:primer] if l.strip()]
     for l in cab[:-1]:
         pc = parrafo(d, l, tam=11, justificar=False, despues=0, centrar=True)
-        if l.startswith("*repositorio"): pc.paragraph_format.space_before = Pt(10)   # separación como en el informe de Prog SIG
+        if l.startswith("*[https://") or l.startswith("*repositorio"): pc.paragraph_format.space_before = Pt(10)   # separación como en el informe de Prog SIG
     pb = parrafo(d, "", tam=11, justificar=False, despues=0, centrar=True); pb.paragraph_format.space_before = Pt(10)   # linea en blanco antes del titulo (ajuste de Lina en Word, 2026-10-26)
     parrafo(d, cab[-1], tam=12, negrita=True, despues=14, centrar=True)   # titulo a 12 pt (ajuste de Lina en Word, 2026-10-26)
 
@@ -148,7 +148,7 @@ def main():
             m = re.match(r"!\[(.*)\]\((.*)\)", t)
             pie, ruta = m.group(1), os.path.join(AQUI, m.group(2))
             p = d.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            p.add_run().add_picture(ruta, width=Inches(4.9 if os.path.basename(ruta) == 'fig_localizacion.png' else 6.5))   # Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)
+            p.add_run().add_picture(ruta, width=Inches({'fig_localizacion.png': 4.69, 'fold_map.png': 6.3}.get(os.path.basename(ruta), 6.5)))   # Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)
             p.paragraph_format.keep_with_next = True; p.paragraph_format.space_after = Pt(2)
             parrafo(d, pie, tam=8.5, cursiva=True, despues=10)
         elif t.startswith("Tabla ") or t.startswith("Table "):
