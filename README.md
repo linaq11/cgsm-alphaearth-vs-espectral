@@ -14,7 +14,7 @@ Se compararon siete configuraciones de entrada sobre 600 puntos, con el mismo Ra
 
 Las etiquetas de referencia se derivaron de ESA WorldCover 2021, de modo que las métricas cuantifican acuerdo con ese producto y no exactitud temática independiente.
 
-El informe completo está en `informe/Informe1.md` y en PDF en la misma carpeta.
+El informe completo de este trabajo forma parte de la tesis de maestría en curso de la autora y se publicará con ella; este repositorio contiene el código, los resultados tabulados y las figuras que lo sustentan.
 
 ## Contenido del repositorio
 
@@ -24,7 +24,6 @@ El informe completo está en `informe/Informe1.md` y en PDF en la misma carpeta.
 | `scripts/piloto_benchmark/` | El motor de validación, conservado sin modificaciones: inspección de datos, construcción de particiones espaciales, extracción de variables, clasificación, exportación de AlphaEarth y diseño experimental (`BENCHMARK_DESIGN.md`). |
 | `resultados/` | Tablas CSV y JSON por experimento: métricas por esquema y por pliegue, matrices de confusión, comparaciones pareadas, McNemar, permutación por bloques, importancias de variables y pruebas de sensibilidad. |
 | `figuras/` | Las cinco figuras del informe y los mapas clasificados en PNG. |
-| `informe/` | Informe en Markdown y PDF. |
 | `DOCUMENTACION_scripts.md` | Documentación redactada de cada script: propósito, entradas, procedimiento y salidas. |
 | `DOCUMENTACION_cabeceras.md` | Cabeceras y comentarios de los scripts tal como están en el código, reunidos por `generar_documentacion.py`; conservan las notas de desarrollo. |
 
