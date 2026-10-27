@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Si utiliza este repositorio, cítelo como se indica a continuación."
+title: "Representaciones de modelos fundacionales frente a variables espectrales en el manglar de la Ciénaga Grande de Santa Marta: una comparación con validación espacial"
+authors:
+  - family-names: "Quintero Fonseca"
+    given-names: "Lina María"
+    email: "lquinterof@unal.edu.co"
+    affiliation: "Universidad Nacional de Colombia, Maestría en Geomática"
+type: software
+license: MIT
+repository-code: "https://github.com/linaq11/cgsm-alphaearth-vs-espectral"
+url: "https://github.com/linaq11/cgsm-alphaearth-vs-espectral"
+date-released: "2026-10-27"
+keywords:
+  - AlphaEarth
+  - Sentinel-2
+  - mangrove
+  - spatial cross-validation
+  - Random Forest
+  - Earth Engine
