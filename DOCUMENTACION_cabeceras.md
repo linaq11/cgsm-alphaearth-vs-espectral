@@ -599,6 +599,17 @@ Comentarios en el código:
 - línea 94: resumen numerico para el texto
 
 
+### `figura_mapas_2x2.py`
+
+```
+Vuelve a componer fig_mapa_clasificacion.png en dos filas por dos columnas, a partir de las teselas ya descargadas por
+mapa_clasificacion.py (carpeta mapa_clasificacion/), para que los mapas se lean en el ancho de página del informe.
+No recalcula nada: mismas teselas, mismos valores de validacion_gee_vs_sklearn.json, misma leyenda.
+
+USO: python -X utf8 figura_mapas_2x2.py
+```
+
+
 ### `informe_a_word.py`
 
 ```
@@ -617,5 +628,8 @@ USO
 Comentarios en el código:
 
 - línea 92: celdas compactas: 0,03 cm arriba y abajo, 0,1 cm a los lados
+- línea 120: interlineado sencillo en todo el documento (ajuste de Lina en Word, 2026-10-26 y 2026-10-27)
 - línea 126: separación como en el informe de Prog SIG
-- línea 150: Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)
+- línea 127: linea en blanco antes del titulo (ajuste de Lina en Word, 2026-10-26)
+- línea 128: titulo a 12 pt (ajuste de Lina en Word, 2026-10-26)
+- línea 151: Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)

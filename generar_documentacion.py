@@ -17,7 +17,7 @@ ORDEN = [
     ("3. Representaciones frente a variables espectrales", ["representaciones_2021.py", "permutacion_bloques.py", "variograma_residuos_finales.py"]),
     ("4. Pruebas de sensibilidad", ["auditoria_etiquetas.py", "sensibilidad_etiquetas.py", "diez_pliegues.py", "control_tamano_6km.py", "control_composicion_6km.py", "regimen_16km_corregido.py"]),
     ("5. Aplicación espacial", ["mapa_clasificacion.py", "mapa_desacuerdo_clases.py"]),
-    ("6. Figuras e informe", ["figura_representaciones.py", "informe_a_word.py"]),
+    ("6. Figuras e informe", ["figura_representaciones.py", "figura_mapas_2x2.py", "informe_a_word.py"]),
 ]
 
 

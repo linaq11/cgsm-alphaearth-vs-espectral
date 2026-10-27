@@ -164,6 +164,10 @@ Procedimiento. El panel (a) muestra el macro-F1 por configuración, con barra de
 
 Salidas. `figuras/fig_representaciones.png` y un resumen numérico para el texto.
 
+### `figura_mapas_2x2.py`
+
+Propósito. Recompone `figuras/fig_mapa_clasificacion.png` en dos filas por dos columnas a partir de las teselas ya descargadas por `mapa_clasificacion.py`, sin recalcular nada, para que los mapas se lean al ancho de página del informe (Figura 5).
+
 ### `informe_a_word.py`
 
 Propósito. Convierte `Informe1.md` en `Informe1.docx`: tamaño carta, márgenes de 2,5 cm, Calibri 11, cuerpo justificado, encabezados en negrita sin numerar, tablas de Markdown con fila de encabezado sombreada, figuras a 5,2 pulgadas insertadas desde `![pie](ruta)` y pies y tablas a 8,5 puntos. El bloque de cabecera (líneas antes del primer `## `) va una por línea, con la última, el título, en negrita.
