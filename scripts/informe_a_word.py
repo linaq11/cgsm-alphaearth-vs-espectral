@@ -86,10 +86,14 @@ def tabla(d, filas):
     t = d.add_table(rows=1, cols=len(enc))
     t.style = "Table Grid"
     t.alignment = WD_TABLE_ALIGNMENT.CENTER
+    tblPr = t._tbl.tblPr; mar = OxmlElement("w:tblCellMar")
+    for lado, v in (("top", 15), ("bottom", 15), ("left", 60), ("right", 60)):
+        e = OxmlElement("w:" + lado); e.set(qn("w:w"), str(v)); e.set(qn("w:type"), "dxa"); mar.append(e)
+    tblPr.append(mar)   # celdas compactas: 0,03 cm arriba y abajo, 0,1 cm a los lados
     for k, c in enumerate(enc):
         cel = t.rows[0].cells[k]; cel.text = ""
-        corridas(cel.paragraphs[0], c, 8.5, negrita=True, color=BLANCO)
-        cel.paragraphs[0].paragraph_format.space_after = Pt(0)
+        corridas(cel.paragraphs[0], c, 8, negrita=True, color=BLANCO)
+        cel.paragraphs[0].paragraph_format.space_after = Pt(0); cel.paragraphs[0].paragraph_format.line_spacing = 1.0
         sombrear(cel, ACENTO)
     tr = t.rows[0]._tr.get_or_add_trPr()
     h = OxmlElement("w:tblHeader"); h.set(qn("w:val"), "true"); tr.append(h)
@@ -97,8 +101,8 @@ def tabla(d, filas):
         nueva = t.add_row().cells
         for k, c in enumerate(fila[:len(enc)]):
             nueva[k].text = ""
-            corridas(nueva[k].paragraphs[0], c, 8.5)
-            nueva[k].paragraphs[0].paragraph_format.space_after = Pt(0)
+            corridas(nueva[k].paragraphs[0], c, 8)
+            nueva[k].paragraphs[0].paragraph_format.space_after = Pt(0); nueva[k].paragraphs[0].paragraph_format.line_spacing = 1.0
             if k > 0 and re.fullmatch(r"[−\-+]?\d[\d.,]*( ?\(.*\))?|—", c):
                 nueva[k].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
     d.add_paragraph().paragraph_format.space_after = Pt(2)
