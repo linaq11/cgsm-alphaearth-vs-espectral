@@ -1,0 +1,72 @@
+{
+ "referencia": {
+  "block_6km": {
+   "s2_multitemporal": 0.808,
+   "alphaearth": 0.846,
+   "s2_multi_mas_alphaearth": 0.863
+  },
+  "block_16km": {
+   "s2_multitemporal": 0.703,
+   "alphaearth": 0.708,
+   "s2_multi_mas_alphaearth": 0.738
+  }
+ },
+ "referencia_dif": {
+  "block_6km": {
+   "alphaearth": 0.038,
+   "combinacion": 0.055
+  },
+  "block_16km": {
+   "alphaearth": 0.004,
+   "combinacion": 0.035
+  }
+ },
+ "n_95": {
+  "macro_f1_media": {
+   "s2_multitemporal": 0.798,
+   "alphaearth": 0.816,
+   "s2_multi_mas_alphaearth": 0.825
+  },
+  "macro_f1_sd": {
+   "s2_multitemporal": 0.019,
+   "alphaearth": 0.015,
+   "s2_multi_mas_alphaearth": 0.015
+  },
+  "dif_alphaearth": {
+   "media": 0.018,
+   "ic_2.5": -0.017,
+   "ic_97.5": 0.053,
+   "rep_positivas": 16
+  },
+  "dif_combinacion": {
+   "media": 0.027,
+   "ic_2.5": 0.001,
+   "ic_97.5": 0.054,
+   "rep_positivas": 19
+  }
+ },
+ "n_142": {
+  "macro_f1_media": {
+   "s2_multitemporal": 0.805,
+   "alphaearth": 0.829,
+   "s2_multi_mas_alphaearth": 0.833
+  },
+  "macro_f1_sd": {
+   "s2_multitemporal": 0.011,
+   "alphaearth": 0.014,
+   "s2_multi_mas_alphaearth": 0.01
+  },
+  "dif_alphaearth": {
+   "media": 0.025,
+   "ic_2.5": -0.002,
+   "ic_97.5": 0.053,
+   "rep_positivas": 19
+  },
+  "dif_combinacion": {
+   "media": 0.028,
+   "ic_2.5": 0.007,
+   "ic_97.5": 0.045,
+   "rep_positivas": 20
+  }
+ }
+}

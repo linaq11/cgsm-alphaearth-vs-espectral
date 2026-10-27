@@ -128,6 +128,14 @@ Procedimiento. Con cinco pliegues la prueba de signos no puede bajar de 0,0625, 
 
 Salidas. `diez_pliegues/cv_metrics.csv`, `cv_per_fold.csv`, matrices de confusión, `cv_predictions.csv` (no publicada) y `resumen.json`.
 
+### `control_tamano_6km.py`, `control_composicion_6km.py` y `regimen_16km_corregido.py`
+
+Propósito. Tres controles preregistrados (`PREREGISTRO_control_tamano_6km.md`) sobre la lectura del régimen de 16 km, en el que cada pliegue entrena con 95 a 142 puntos y con alguna clase casi ausente, frente a 260 a 296 puntos por pliegue a 6 km. El primero repite el régimen de 6 km con el entrenamiento submuestreado a 95 y 142 puntos en proporción de clases (20 repeticiones por tamaño). El segundo lo submuestrea a las cuentas exactas por clase de cada pliegue de 16 km (20 repeticiones por composición). El tercero repite los bloques de 16 km con tres pliegues en diez posiciones de la malla (la original, que reproduce `fold_block_16km`, y nueve desplazamientos aleatorios), con la exclusión original de 8 km y con una de 3 km, justificada por el alcance máximo de los variogramas de los residuos (2.627 m). Mismo clasificador, mismo ajuste de hiperparámetros y mismo motor de asignación de bloques (`build_split.assign_blocked_folds`).
+
+Entradas. Las tablas de `representaciones_2021.py` (se importa como módulo) y `cv_metrics.csv` como referencia.
+
+Salidas. `representaciones_2021/control_tamano_6km.csv`, `control_composicion_6km.csv` y `regimen_16km_corregido.csv` (una fila por repetición o malla, exclusión y configuración, con el tamaño del entrenamiento) y sus `_resumen.json`. Resultado: con 142 y 95 puntos la ventaja de AlphaEarth fue 0,025 y 0,018; con el tamaño y la composición de los pliegues de 16 km, 0,006; a 16 km con exclusión de 3 km y diez mallas, −0,007 [−0,031; 0,021] para AlphaEarth y +0,007 [−0,017; 0,031] para la combinación, con la macro-F1 de vuelta al nivel de 6 km (0,81 a 0,82). Tabla 4 del informe.
+
 ## 5. Aplicación espacial
 
 ### `mapa_clasificacion.py`

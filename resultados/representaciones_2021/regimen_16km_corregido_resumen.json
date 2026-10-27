@@ -1,0 +1,67 @@
+{
+ "coincidencia_malla0_con_informe": 1.0,
+ "3km": {
+  "macro_f1_media": {
+   "s2_marzo": 0.786,
+   "s2_seca_humeda": 0.805,
+   "s2_multitemporal": 0.814,
+   "alphaearth": 0.807,
+   "s2_multi_mas_alphaearth": 0.821
+  },
+  "macro_f1_malla0": {
+   "s2_marzo": 0.797,
+   "s2_seca_humeda": 0.789,
+   "s2_multitemporal": 0.807,
+   "alphaearth": 0.818,
+   "s2_multi_mas_alphaearth": 0.824
+  },
+  "n_entren_medio": 248.9,
+  "min_clase_entren_medio": 41.2,
+  "dif_alphaearth": {
+   "media": -0.007,
+   "ic_2.5": -0.031,
+   "ic_97.5": 0.021,
+   "mallas_positivas": 4,
+   "malla0": 0.011
+  },
+  "dif_combinacion": {
+   "media": 0.007,
+   "ic_2.5": -0.017,
+   "ic_97.5": 0.031,
+   "mallas_positivas": 6,
+   "malla0": 0.016
+  }
+ },
+ "8km": {
+  "macro_f1_media": {
+   "s2_marzo": 0.722,
+   "s2_seca_humeda": 0.744,
+   "s2_multitemporal": 0.738,
+   "alphaearth": 0.741,
+   "s2_multi_mas_alphaearth": 0.746
+  },
+  "macro_f1_malla0": {
+   "s2_marzo": 0.733,
+   "s2_seca_humeda": 0.71,
+   "s2_multitemporal": 0.703,
+   "alphaearth": 0.708,
+   "s2_multi_mas_alphaearth": 0.738
+  },
+  "n_entren_medio": 101.8,
+  "min_clase_entren_medio": 6.8,
+  "dif_alphaearth": {
+   "media": 0.003,
+   "ic_2.5": -0.023,
+   "ic_97.5": 0.041,
+   "mallas_positivas": 5,
+   "malla0": 0.004
+  },
+  "dif_combinacion": {
+   "media": 0.008,
+   "ic_2.5": -0.03,
+   "ic_97.5": 0.039,
+   "mallas_positivas": 7,
+   "malla0": 0.035
+  }
+ }
+}

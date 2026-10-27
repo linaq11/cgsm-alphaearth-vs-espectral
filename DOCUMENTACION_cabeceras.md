@@ -437,6 +437,74 @@ Comentarios en el código:
 - línea 57: prediccion por punto, para la prueba por bloques
 
 
+### `control_tamano_6km.py`
+
+```
+Control del tamaño de entrenamiento a 6 km (preregistrado en PREREGISTRO_control_tamano_6km.md).
+
+Repite el régimen de bloques de 6 km del Informe 1 (mismos pliegues de prueba, misma exclusión de 3 km,
+mismo Random Forest y mismo ajuste de hiperparámetros del motor del piloto) submuestreando al azar el
+entrenamiento de cada pliegue a n = 95 y n = 142 puntos, los tamaños mínimo y máximo que quedan a 16 km,
+estratificado por clase en proporción. 20 repeticiones por tamaño. Sirve para separar el efecto de la
+distancia del efecto del tamaño del entrenamiento en la lectura del régimen de 16 km.
+
+SALIDAS (representaciones_2021/)
+  control_tamano_6km.csv          macro-F1 fuera de pliegue por repetición, tamaño y brazo
+  control_tamano_6km_resumen.json diferencias pareadas frente a la línea base: media e intervalo 2,5-97,5
+
+USO: python -X utf8 control_tamano_6km.py
+```
+
+
+Comentarios en el código:
+
+- línea 68: misma submuestra para los tres brazos
+
+
+### `control_composicion_6km.py`
+
+```
+Control B: tamaño y composición de clases del entrenamiento a 6 km (preregistrado en PREREGISTRO_control_tamano_6km.md, sección B).
+
+Igual que control_tamano_6km.py, pero el entrenamiento de cada pliegue de 6 km se submuestrea a las cuentas exactas por
+clase con que entrena cada pliegue de 16 km (tres composiciones, una por pliegue de 16 km). Si una clase pide más puntos
+de los disponibles en el pliegue de 6 km, se toman todos y se registra el tamaño real. 20 repeticiones por composición.
+Separa el efecto de la distancia del efecto conjunto de tamaño y composición en la lectura del régimen de 16 km.
+
+SALIDAS (representaciones_2021/)
+  control_composicion_6km.csv          macro-F1 por repetición, composición y brazo, con el tamaño real
+  control_composicion_6km_resumen.json diferencias pareadas frente a la línea base por composición y en conjunto
+
+USO: python -X utf8 control_composicion_6km.py
+```
+
+
+### `regimen_16km_corregido.py`
+
+```
+Control C: régimen de 16 km con exclusión de 3 km y varias mallas (preregistrado en PREREGISTRO_control_tamano_6km.md, sección C).
+
+El régimen de 16 km del Informe 1 usó una sola malla de bloques, tres pliegues y una zona de exclusión de 8 km, tres veces
+el alcance máximo de los variogramas de los residuos (2.627 m). Con esa exclusión cada pliegue entrena con 95 a 142 puntos y
+pierde casi por completo alguna clase. Aquí se repite el régimen de 16 km con la malla original y con 9 desplazamientos
+aleatorios de la malla, con exclusión de 3 km (la misma del régimen de 6 km, justificada por el variograma) y, como
+comparación, con la exclusión original de 8 km. Mismo motor de asignación de bloques a pliegues (build_split), mismo
+Random Forest y mismo ajuste de hiperparámetros.
+
+SALIDAS (representaciones_2021/)
+  regimen_16km_corregido.csv          macro-F1 fuera de pliegue por malla, exclusión y brazo; tamaño y clase mínima del entrenamiento
+  regimen_16km_corregido_resumen.json medias e intervalos 2,5-97,5 entre mallas de las diferencias frente a la línea base
+
+USO: python -X utf8 regimen_16km_corregido.py
+```
+
+
+Comentarios en el código:
+
+- línea 43: comprobación: la malla 0 reproduce los pliegues de 16 km del informe
+- línea 51: desplazar la malla equivale a desplazar los puntos
+
+
 ## 5. Aplicación espacial
 
 
@@ -548,5 +616,6 @@ USO
 
 Comentarios en el código:
 
-- línea 122: separación como en el informe de Prog SIG
-- línea 146: Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)
+- línea 92: celdas compactas: 0,03 cm arriba y abajo, 0,1 cm a los lados
+- línea 126: separación como en el informe de Prog SIG
+- línea 150: Figuras 2 a 5 a todo el ancho (decision de Lina, 2026-10-26)
