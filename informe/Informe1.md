@@ -163,6 +163,18 @@ La mejora se concentró en las clases más difíciles. Con bloques de 6 km, el F
 
 Dos resultados respaldaron la interpretación de complementariedad. En primer lugar, la combinación superó a AlphaEarth sola en los dos regímenes de bloques, con 0,863 frente a 0,846 a 6 km y 0,738 frente a 0,708 a 16 km. En segundo lugar, cuando ambas fuentes se utilizaron juntas, las 64 dimensiones de AlphaEarth reunieron el 49 % de la importancia total a pesar de representar el 68 % de las variables. Cuatro de las cinco variables más importantes fueron espectrales, encabezadas por el infrarrojo de onda corta de la estación seca y por el máximo anual del índice de agua. Estos resultados son compatibles con una contribución predictiva complementaria de ambas fuentes, aunque la importancia por impureza no permite cuantificar la información independiente de cada una.
 
+El F1 de cada clase es la media armónica de su precisión y su exhaustividad, y el macro-F1 es el promedio de los cuatro F1 con el mismo peso. La Tabla 4 los desagrega para el régimen principal: el agua está saturada en todas las configuraciones, el manglar y la clase otro ganan con AlphaEarth y con la combinación, y el humedal herbáceo es la clase más baja en todas y la que más mejora, de 0,667 a 0,776.
+
+Tabla 4. F1 por clase y macro-F1 de las cinco configuraciones con bloques de 6 km (468 puntos de validación cruzada, etiquetas WorldCover 2021).
+
+| Configuración | Manglar | Agua | Humedal herbáceo | Otro | Macro-F1 |
+|---|---|---|---|---|---|
+| Sentinel-2, marzo | 0,795 | 0,961 | 0,653 | 0,772 | 0,795 |
+| Sentinel-2, seca + húmeda | 0,818 | 0,969 | 0,645 | 0,785 | 0,804 |
+| Sentinel-2, multitemporal | 0,807 | 0,969 | 0,667 | 0,791 | 0,808 |
+| AlphaEarth 2021 | 0,856 | 0,968 | 0,744 | 0,815 | 0,846 |
+| Multitemporal + AlphaEarth | 0,873 | 0,969 | 0,776 | 0,835 | 0,863 |
+
 ### Aplicación espacial de las configuraciones
 
 La Figura 5 extiende las tres configuraciones principales a toda el área de estudio. Para procesar los aproximadamente 20 millones de píxeles de 10 m del dominio analítico (43 millones en la ventana rectangular del cubo) se utilizó el Random Forest de Earth Engine, entrenado con los mismos 429 puntos de la partición de la reserva (los 468 de validación cruzada menos los 39 situados a menos de 3 km de ella), las mismas variables y los mismos hiperparámetros utilizados en scikit-learn. Sobre los 132 puntos reservados, ambos motores coincidieron en 96,2 % de las predicciones para la línea base y AlphaEarth y en 97,7 % para la combinación.
