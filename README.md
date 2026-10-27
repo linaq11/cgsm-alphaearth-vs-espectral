@@ -1,6 +1,6 @@
 # Representaciones de modelos fundacionales frente a variables espectrales en el manglar de la Ciénaga Grande de Santa Marta: una comparación con validación espacial
 
-Código, resultados y figuras del Informe 1 de *Percepción Remota Avanzada*, Maestría en Geomática, Universidad Nacional de Colombia (2026-2).
+Código, resultados y figuras de un estudio desarrollado en la Maestría en Geomática de la Universidad Nacional de Colombia (2026).
 
 **Autora:** Lina María Quintero Fonseca
 
