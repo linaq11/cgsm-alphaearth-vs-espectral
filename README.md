@@ -1,5 +1,7 @@
 # Representaciones de modelos fundacionales frente a variables espectrales en el manglar de la Ciénaga Grande de Santa Marta: una comparación con validación espacial
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23709966.svg)](https://doi.org/10.5281/zenodo.23709966)
+
 Código, resultados y figuras de un estudio desarrollado en la Maestría en Geomática de la Universidad Nacional de Colombia (2026).
 
 **Autora:** Lina María Quintero Fonseca
